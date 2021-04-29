@@ -1,3 +1,7 @@
+const FETCH_USERS = 'FETCH_USERS';
+const FETCH_USERS_SUCCESS = 'FETCH_USERS_SUCCESS';
+const FETCH_USERS_ERROR = 'FETCH_USERS_ERROR';
+
 interface UserState {
   users: any[];
   loading: boolean;
@@ -10,10 +14,14 @@ const initialState: UserState = {
   error: null,
 };
 
-export const userReducer = (state = initialState, action) => {
+export const userReducer = (state = initialState, action): UserState => {
   switch (action.type) {
-    case typeName:
-      return { ...state, ...payload };
+    case FETCH_USERS:
+      return { users: [], loading: true, error: null };
+    case FETCH_USERS_SUCCESS:
+      return { users: [], loading: true, error: null };
+    case FETCH_USERS_ERROR:
+      return { users: [], loading: true, error: null };
 
     default:
       return state;
