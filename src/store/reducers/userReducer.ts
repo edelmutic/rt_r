@@ -3,6 +3,13 @@ const initialState: UserState = {
   loading: false,
   error: null,
 };
+
+interface UserState {
+  users: any[];
+  loading: boolean;
+  error: null | string;
+}
+
 enum UserActionTypes {
   FETCH_USERS = 'FETCH_USERS',
   FETCH_USERS_SUCCESS = 'FETCH_USERS_SUCCESS',
